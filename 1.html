@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body id="body" class="p-0 m-0 text-center">
+<body id="body" class="p-0 m-0 text-center overflow-hidden">
     <header class="mb-auto">
         <div class="">
             <h3 class="float-md-start border-bottom border-1 border-dark py-2 w-100">Random Arabic Words : 1 Word</h3>
@@ -157,18 +157,12 @@
         }
 
         function shuffleArray(array) {
-            var newArray = array;
-            for (var i = newArray.length - 1; i > 0; i--) {
+            for (var i = array.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
-                var temp = newArray[i];
-                newArray[i] = newArray[j];
-                newArray[j] = temp;
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
-            while (array.length) { array.pop(); }
-            newArray.forEach(function(words) {
-                array.push(words);
-            })
-            
         }
 
         $(document).ready(function () {
